@@ -16,7 +16,8 @@
 
 @property (nonatomic, strong, readwrite) NSArray *category;
 @property (nonatomic, strong, readwrite) NSArray *postTitles;
-@property (nonatomic, strong, readwrite)NSMutableArray *forumArray;
+@property (nonatomic, strong, readwrite) NSArray *forumArray;
+@property (nonatomic, strong, readwrite) NSArray *news;
 @end
 
 @implementation STClient
@@ -40,15 +41,44 @@
     return self;
 }
 
+- (RACSignal *)fetchJSONFromURL:(NSURL *)url {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (! error) {
+                NSError *jsonError = nil;
+                id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                if (! jsonError) {
+                    [subscriber sendNext:json];
+                }
+                else {
+                    [subscriber sendError:jsonError];
+                }
+            }
+            else {
+                [subscriber sendError:error];
+            }
+            
+            [subscriber sendCompleted];
+        }];
+        
+        [dataTask resume];
+        
+        return [RACDisposable disposableWithBlock:^{
+            [dataTask cancel];
+        }];
+    }] doError:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
 
 - (void)fetchWebForum{
     NSURL *url = [NSURL URLWithString:STCLIENT_FORUM];
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (! error) {
             NSError *jsonError = nil;
-            self.forumArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
             if (! jsonError) {
-                
+                self.forumArray = array;
             }else{
                
             }
@@ -64,13 +94,11 @@
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (! error) {
             NSError *jsonError = nil;
-//            self.category = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
             NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
             RACSequence * list = [array rac_sequence];
             self.category = [[list map:^(NSDictionary *item) {
                 return [MTLJSONAdapter modelOfClass:[STGategory class] fromJSONDictionary:item error:nil];
             }] array];
-            NSLog(@"%@",self.category);
             if (! jsonError) {
                
             }else{
@@ -99,6 +127,22 @@
             
         }}];
     [dataTask resume];
-
+}
+- (void)fetchWebNews:(int)fid{
+    NSURL *url = [NSURL URLWithString:[[NSString alloc]initWithFormat:STCLIENT_CATEGORY_NEWS,fid,0,20]];
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (! error) {
+            NSError *jsonError = nil;
+            self.news = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+            if (! jsonError) {
+                
+            }else{
+                
+            }
+        }
+        else{
+            
+        }}];
+    [dataTask resume];
 }
 @end

@@ -12,14 +12,15 @@
 
 @interface STClient : NSObject
 
-@property (nonatomic,strong,readonly) NSMutableArray *forumArray;
+@property (nonatomic,strong,readonly) NSArray *forumArray;
 @property (nonatomic,strong,readonly) NSArray *category;
 @property (nonatomic,strong,readonly) NSArray *postTitles;
+@property (nonatomic,strong,readonly) NSArray *news;
 
 +(instancetype) sharedClient;
 
 - (void)fetchWebForum;
 - (void)fetchWebCategory;
 - (void)fetchWebForumPosts:(int)fid;
-
+- (void)fetchWebNews:(int)fid;
 @end

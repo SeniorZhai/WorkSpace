@@ -7,8 +7,11 @@
 //
 
 #import "AfficheViewController.h"
+#import "STClient.h"
 
 @interface AfficheViewController ()
+
+@property (nonatomic,strong) UITableView *tableView;
 
 @end
 
@@ -18,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"活动公告";
+        [[STClient sharedClient] fetchWebNews:17];
     }
     return self;
 }
@@ -27,16 +30,55 @@
 {
     [super viewDidLoad];
     CGSize size = [UIScreen mainScreen].bounds.size;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(size.width/2 - 50, size.height/2 -25, 100, 50)];
-    label.textAlignment = UITextAlignmentCenter;
-    label.text = self.title;
-    [self.view addSubview:label];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, size.width, size.height - 70)];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
+    self.tableView.pagingEnabled = YES;
+    [self.view addSubview:self.tableView];
+    [[RACObserve([STClient sharedClient],news)
+      deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(NSArray *newForecast){
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+#pragma mark DataSource
+#pragma mark DataSource
+
+// 返回单元格
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"News";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (! cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.layer.masksToBounds = YES;
+    NSString *title = [[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.textLabel.text = title;
+    NSString *summary = [[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"summary"];
+    cell.detailTextLabel.text = summary;
+    cell.layer.cornerRadius = 12;
+    cell.layer.masksToBounds = YES;
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [STClient sharedClient].news.count;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
 }
 
 @end

@@ -9,7 +9,6 @@
 #import "ForumViewController.h"
 #import "STClient.h"
 #import "SubjectViewController.h"
-#import "AppMacro.h"
 
 @interface ForumViewController ()
 
