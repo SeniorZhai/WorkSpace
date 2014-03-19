@@ -145,4 +145,18 @@
         }}];
     [dataTask resume];
 }
+- (void)fetchWebNewContent:(int)aid{
+    NSURL *url = [NSURL URLWithString:[[NSString alloc]initWithFormat:STCLIENT_CATEGOPY_NEWS_CONTENT,aid]];
+    NSLog(@"url_____________%@",url);
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (! error) {
+            self.newcontent = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",self.newcontent);
+        }
+        else{
+            
+        }}];
+    [dataTask resume];
+
+}
 @end

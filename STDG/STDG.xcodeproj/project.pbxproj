@@ -34,6 +34,7 @@
 		4F14F17818CD9C28008E928E /* STDGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14F17718CD9C28008E928E /* STDGTests.m */; };
 		4F14F18A18CDA31A008E928E /* STClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14F18918CDA31A008E928E /* STClient.m */; };
 		4F15C6FE18D85A6000BF6C05 /* STForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F15C6FD18D85A6000BF6C05 /* STForum.m */; };
+		4F2E0F8D18D9C30600DC1936 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */; };
 		4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */; };
 		4F3C2F4118D18039005B4F53 /* STGategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C2F4018D18039005B4F53 /* STGategory.m */; };
 		4FD1031518D18CAB00B7F308 /* AfficheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1031418D18CAB00B7F308 /* AfficheViewController.m */; };
@@ -88,6 +89,8 @@
 		4F14F18918CDA31A008E928E /* STClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STClient.m; sourceTree = "<group>"; };
 		4F15C6FC18D85A6000BF6C05 /* STForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STForum.h; path = Models/STForum.h; sourceTree = "<group>"; };
 		4F15C6FD18D85A6000BF6C05 /* STForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STForum.m; path = Models/STForum.m; sourceTree = "<group>"; };
+		4F2E0F8B18D9C30600DC1936 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		4F3ACF5F18D2CE74000882C6 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacro.h; path = Macro/AppMacro.h; sourceTree = "<group>"; };
 		4F3ACF6118D2FD60000882C6 /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				4FD1031718D18CDD00B7F308 /* DynamicViewController.m */,
 				4FD1031918D18CFC00B7F308 /* IndustryViewController.h */,
 				4FD1031A18D18CFC00B7F308 /* IndustryViewController.m */,
+				4F2E0F8B18D9C30600DC1936 /* ContentViewController.h */,
+				4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				4F042E0618CFF9F400D8CFCF /* ForumViewController.m in Sources */,
 				4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */,
 				4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */,
+				4F2E0F8D18D9C30600DC1936 /* ContentViewController.m in Sources */,
 				4F14F15F18CD9C28008E928E /* main.m in Sources */,
 				4FD1031518D18CAB00B7F308 /* AfficheViewController.m in Sources */,
 				4F14F18A18CDA31A008E928E /* STClient.m in Sources */,

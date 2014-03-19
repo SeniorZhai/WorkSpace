@@ -16,6 +16,7 @@
 @property (nonatomic,strong,readonly) NSArray *category;
 @property (nonatomic,strong,readonly) NSArray *postTitles;
 @property (nonatomic,strong,readonly) NSArray *news;
+@property (nonatomic,strong) NSString *newcontent;
 
 +(instancetype) sharedClient;
 
@@ -23,4 +24,5 @@
 - (void)fetchWebCategory;
 - (void)fetchWebForumPosts:(int)fid;
 - (void)fetchWebNews:(int)fid;
+- (void)fetchWebNewContent:(int)aid;
 @end

@@ -16,7 +16,7 @@
 //  根据栏目分页查询，catid：栏目ID、strat：起始文章的id、count：本页文章加载数量
 #define STCLIENT_CATEGORY_NEWS @"http://115.28.162.154/discuz/gwtv/categorynews.php?catid=%d&start=%d&count=%d"
 //  根据文章id获取文章内容的接口
-#define STCLIENT_CATEGOPY_NEWS_CONTENT @"http://115.28.162.154/discuz/gwtv/categorycontent.php?aid=%d"
+#define STCLIENT_CATEGOPY_NEWS_CONTENT @"http://115.28.162.154/discuz/gwtv/newscontent.php?aid=%d"
 /*
  *  论坛部分
  */

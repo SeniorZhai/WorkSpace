@@ -84,7 +84,7 @@
     NSString * str = [[[[[STClient sharedClient].forumArray objectAtIndex:indexPath.section] objectForKey:@"subForums"] objectAtIndex:indexPath.row] objectForKey:@"id"];
     [[STClient sharedClient] fetchWebForumPosts:[str intValue]];
     SubjectViewController *subVC = [[SubjectViewController alloc] init];
-    [self.navigationController pushViewController:subVC animated:NO];
+    [self.parentViewController.navigationController pushViewController:subVC animated:NO];
 }
 - (void)didReceiveMemoryWarning
 {

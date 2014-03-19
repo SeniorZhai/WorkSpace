@@ -8,6 +8,7 @@
 
 #import "AfficheViewController.h"
 #import "STClient.h"
+#import "ContentViewController.h"
 
 @interface AfficheViewController ()
 
@@ -78,7 +79,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    int aid = [[[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"aid"] intValue];
+    [[STClient sharedClient] fetchWebNewContent:(aid)];
+    ContentViewController *content = [[ContentViewController alloc] init];
+    [super.navigationController pushViewController:content animated:NO];
+    NSLog(@"%@",[[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"aid"]);
 }
+
 
 @end

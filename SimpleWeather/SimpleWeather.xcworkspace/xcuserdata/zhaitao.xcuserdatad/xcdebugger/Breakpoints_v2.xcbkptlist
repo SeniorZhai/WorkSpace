@@ -17,6 +17,36 @@
             endingLineNumber = "11"
             landmarkName = "@interface ZTCondition"
             landmarkType = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZTCondition date]"
+                  moduleName = "SimpleWeather"
+                  urlString = "file:///Users/zhaitao/Documents/WorkSpace/SimpleWeather/SimpleWeather/ZTCondition.h"
+                  timestampString = "416912211.606318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZTCondition setDate:]"
+                  moduleName = "SimpleWeather"
+                  urlString = "file:///Users/zhaitao/Documents/WorkSpace/SimpleWeather/SimpleWeather/ZTCondition.h"
+                  timestampString = "416912211.606534"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
