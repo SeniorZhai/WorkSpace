@@ -13,6 +13,8 @@
 
 @interface NewsViewController ()
 
+@property (nonatomic,strong) UITableView *tableView;
+
 @end
 
 @implementation NewsViewController
@@ -42,51 +44,28 @@
     [super viewDidLoad];
     
     CGSize size = [UIScreen mainScreen].bounds.size;
-    
-//    [RACObserve([STClient sharedClient], obj) subscribeNext:^(NSArray *array){
-//
-//        NSMutableArray *newArray = [[NSMutableArray alloc]init];
-//        for (int i = 0; i < array.count; i ++) {
-//            NSDictionary *dic = array[i];
-//            [newArray addObject:[dic objectForKey:@"catname"]];
-//        }
-//        NSArray *segmentedArray = [[NSArray alloc]initWithArray:newArray];
-//        _segmentedControl = [[UISegmentedControl alloc]initWithItems:segmentedArray];
-//        _segmentedControl.frame = CGRectMake(100, 44 + 25, size.width - 200, 50.0);
-//        _segmentedControl.selectedSegmentIndex = 0;//设置默认选择项索引
-//        [self.view addSubview:_segmentedControl];
-//    }];
-//    [_segmentedControl addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
 
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, size.width, size.height - 70)];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
+    self.tableView.pagingEnabled = YES;
+    [self.view addSubview:self.tableView];
     
-//    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 40 + 25, size.width, 50.0)];
-//    toolBar.barStyle = UIBarStyleDefault;
-//    [self.view addSubview:toolBar];
-//    UIBarButtonItem *item1    = [[UIBarButtonItem alloc]initWithTitle:@"活动公告" style:UIBarButtonItemStylePlain target:self action:nil];
-//    UIBarButtonItem *item2    = [[UIBarButtonItem alloc]initWithTitle:@"开发动态" style:UIBarButtonItemStylePlain target:self action:nil];
-//    UIBarButtonItem *item3    = [[UIBarButtonItem alloc]initWithTitle:@"行业咨询" style:UIBarButtonItemStylePlain target:self action:nil];
-//    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-//    NSArray *items            = @[flexItem,item1,flexItem,item2,flexItem,item3,flexItem];
-//    [toolBar setItems:items animated:YES];
-    
- 
-    
-    _view1 = [[AfficheViewController alloc] init];
-    [self.view insertSubview:_view1.view atIndex:0];
-    
-    _view2 = [[DynamicViewController alloc] init];
+    [[RACObserve([STClient sharedClient],news)
+      deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(NSArray *newForecast){
+        [self.tableView reloadData];
+    }];
 
-    _view3 =[[IndustryViewController alloc] init];
     
     [[RACObserve([STClient sharedClient], category)
         deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(NSArray *newarray){
-//        NSArray *array = [[NSArray alloc] initWithObjects:[[[STClient sharedClient].category objectAtIndex:0] objectForKey:@"catname"] ,[[[STClient sharedClient].category objectAtIndex:1] objectForKey:@"catname"],[[[STClient sharedClient].category objectAtIndex:2] objectForKey:@"catname"],nil];
         NSMutableArray * array = [[NSMutableArray alloc]init];
         for (int i = 0; i < newarray.count; i++) {
             STGategory * gategory = [newarray objectAtIndex:i];
             [array addObject:gategory.catname];
         }
-        
         _segmentedControl = [[UISegmentedControl alloc] initWithItems:array];
         _segmentedControl.frame = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?CGRectMake(100, 44 + 25, size.width - 200, 50.0):CGRectMake(25, 44 + 25, size.width - 50, 40.0);
         _segmentedControl.selectedSegmentIndex = 0;//设置默认选择项索引
@@ -101,22 +80,52 @@
  
     switch (index) {
         case 0:
-            [self.view insertSubview:_view1.view atIndex:0];
-            [self.view2.view removeFromSuperview];
-            [self.view3.view removeFromSuperview];
+            [[STClient sharedClient] fetchWebNews:16];
             break;
         case 1:
-            [self.view insertSubview:_view2.view atIndex:0];
-            [self.view1.view removeFromSuperview];
-            [self.view3.view removeFromSuperview];
+            [[STClient sharedClient] fetchWebNews:17];
             break;
         case 2:
-            [self.view insertSubview:_view3.view atIndex:0];
-            [self.view2.view removeFromSuperview];
-            [self.view1.view removeFromSuperview];
+            [[STClient sharedClient] fetchWebNews:18];
             break;
     }
 
+}
+#pragma mark DataSource
+#pragma mark DataSource
+
+// 返回单元格
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"News";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (! cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    cell.layer.masksToBounds = YES;
+    NSString *title = [[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.textLabel.text = title;
+    NSString *summary = [[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"summary"];
+    cell.detailTextLabel.text = summary;
+    cell.layer.cornerRadius = 12;
+    cell.layer.masksToBounds = YES;
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [STClient sharedClient].news.count;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int aid = [[[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"aid"] intValue];
+    [[STClient sharedClient] fetchWebNewContent:(aid)];
+    NSLog(@"%@",[[[STClient sharedClient].news objectAtIndex:indexPath.row] objectForKey:@"aid"]);
+    NSLog(@"%@",[STClient sharedClient].news);
 }
 
 - (void)didReceiveMemoryWarning

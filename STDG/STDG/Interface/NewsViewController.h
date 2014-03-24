@@ -7,16 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AfficheViewController.h"
-#import "DynamicViewController.h"
-#import "IndustryViewController.h"
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UISegmentedControl *segmentedControl;
-@property (nonatomic,strong) AfficheViewController *view1;
-@property (nonatomic,strong) DynamicViewController *view2;
-@property (nonatomic,strong) IndustryViewController *view3;
 
 - (void)segmentAction:(UISegmentedControl *)Seg;
 

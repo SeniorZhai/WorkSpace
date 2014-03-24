@@ -34,12 +34,10 @@
 		4F14F17818CD9C28008E928E /* STDGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14F17718CD9C28008E928E /* STDGTests.m */; };
 		4F14F18A18CDA31A008E928E /* STClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14F18918CDA31A008E928E /* STClient.m */; };
 		4F15C6FE18D85A6000BF6C05 /* STForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F15C6FD18D85A6000BF6C05 /* STForum.m */; };
-		4F2E0F8D18D9C30600DC1936 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */; };
 		4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */; };
 		4F3C2F4118D18039005B4F53 /* STGategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C2F4018D18039005B4F53 /* STGategory.m */; };
-		4FD1031518D18CAB00B7F308 /* AfficheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1031418D18CAB00B7F308 /* AfficheViewController.m */; };
-		4FD1031818D18CDD00B7F308 /* DynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1031718D18CDD00B7F308 /* DynamicViewController.m */; };
-		4FD1031B18D18CFC00B7F308 /* IndustryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1031A18D18CFC00B7F308 /* IndustryViewController.m */; };
+		4FBC079A18E01D4B0087789B /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC079918E01D4B0087789B /* PostViewController.m */; };
+		4FBC079C18E024080087789B /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC079B18E024080087789B /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,19 +87,14 @@
 		4F14F18918CDA31A008E928E /* STClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STClient.m; sourceTree = "<group>"; };
 		4F15C6FC18D85A6000BF6C05 /* STForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STForum.h; path = Models/STForum.h; sourceTree = "<group>"; };
 		4F15C6FD18D85A6000BF6C05 /* STForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STForum.m; path = Models/STForum.m; sourceTree = "<group>"; };
-		4F2E0F8B18D9C30600DC1936 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
-		4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		4F3ACF5F18D2CE74000882C6 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppMacro.h; path = Macro/AppMacro.h; sourceTree = "<group>"; };
 		4F3ACF6118D2FD60000882C6 /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectViewController.h; sourceTree = "<group>"; };
 		4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectViewController.m; sourceTree = "<group>"; };
 		4F3C2F3F18D18039005B4F53 /* STGategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STGategory.h; path = STDG/Models/STGategory.h; sourceTree = SOURCE_ROOT; };
 		4F3C2F4018D18039005B4F53 /* STGategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STGategory.m; path = STDG/Models/STGategory.m; sourceTree = SOURCE_ROOT; };
-		4FD1031318D18CAB00B7F308 /* AfficheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AfficheViewController.h; sourceTree = "<group>"; };
-		4FD1031418D18CAB00B7F308 /* AfficheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AfficheViewController.m; sourceTree = "<group>"; };
-		4FD1031618D18CDD00B7F308 /* DynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicViewController.h; sourceTree = "<group>"; };
-		4FD1031718D18CDD00B7F308 /* DynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicViewController.m; sourceTree = "<group>"; };
-		4FD1031918D18CFC00B7F308 /* IndustryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndustryViewController.h; sourceTree = "<group>"; };
-		4FD1031A18D18CFC00B7F308 /* IndustryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndustryViewController.m; sourceTree = "<group>"; };
+		4FBC079818E01D4B0087789B /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		4FBC079918E01D4B0087789B /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		4FBC079B18E024080087789B /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		5DDDE70D37114F7F96D13080 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		76E3EED489744EBD81167E8C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,14 +137,9 @@
 				4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */,
 				4F042E0418CFF9F400D8CFCF /* SettingViewController.h */,
 				4F042E0518CFF9F400D8CFCF /* SettingViewController.m */,
-				4FD1031318D18CAB00B7F308 /* AfficheViewController.h */,
-				4FD1031418D18CAB00B7F308 /* AfficheViewController.m */,
-				4FD1031618D18CDD00B7F308 /* DynamicViewController.h */,
-				4FD1031718D18CDD00B7F308 /* DynamicViewController.m */,
-				4FD1031918D18CFC00B7F308 /* IndustryViewController.h */,
-				4FD1031A18D18CFC00B7F308 /* IndustryViewController.m */,
-				4F2E0F8B18D9C30600DC1936 /* ContentViewController.h */,
-				4F2E0F8C18D9C30600DC1936 /* ContentViewController.m */,
+				4FBC079B18E024080087789B /* SettingViewController.xib */,
+				4FBC079818E01D4B0087789B /* PostViewController.h */,
+				4FBC079918E01D4B0087789B /* PostViewController.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -344,6 +332,7 @@
 				4F042E1318CFFA1100D8CFCF /* image-1@2x.png in Resources */,
 				4F042E1918CFFA1100D8CFCF /* image-4@2x.png in Resources */,
 				4F042E1418CFFA1100D8CFCF /* image-2.png in Resources */,
+				4FBC079C18E024080087789B /* SettingViewController.xib in Resources */,
 				4F042E1718CFFA1100D8CFCF /* image-3@2x.png in Resources */,
 				4F14F16518CD9C28008E928E /* Images.xcassets in Resources */,
 				4F042E1218CFFA1100D8CFCF /* image-1.png in Resources */,
@@ -398,20 +387,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FD1031B18D18CFC00B7F308 /* IndustryViewController.m in Sources */,
-				4FD1031818D18CDD00B7F308 /* DynamicViewController.m in Sources */,
 				4F042E0818CFF9F400D8CFCF /* PersonalViewController.m in Sources */,
 				4F15C6FE18D85A6000BF6C05 /* STForum.m in Sources */,
 				4F14F16318CD9C28008E928E /* AppDelegate.m in Sources */,
 				4F042E0618CFF9F400D8CFCF /* ForumViewController.m in Sources */,
 				4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */,
 				4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */,
-				4F2E0F8D18D9C30600DC1936 /* ContentViewController.m in Sources */,
 				4F14F15F18CD9C28008E928E /* main.m in Sources */,
-				4FD1031518D18CAB00B7F308 /* AfficheViewController.m in Sources */,
 				4F14F18A18CDA31A008E928E /* STClient.m in Sources */,
 				4F042E0918CFF9F400D8CFCF /* SettingViewController.m in Sources */,
 				4F3C2F4118D18039005B4F53 /* STGategory.m in Sources */,
+				4FBC079A18E01D4B0087789B /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

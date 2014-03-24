@@ -37,17 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(size.width/2 - 50, size.height/2 -25, 100, 50)];
-    label.textAlignment = UITextAlignmentCenter;
-    label.text = self.title;
-    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
