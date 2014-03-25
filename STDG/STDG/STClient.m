@@ -150,12 +150,31 @@
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (! error) {
             self.newcontent = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@",self.newcontent);
         }
         else{
             
         }}];
     [dataTask resume];
+}
+- (NSDictionary*)login:(NSString*)username withPassword:(NSString*)password{
+    NSDictionary* login;
+    NSURL *url = [NSURL URLWithString:@"http://115.28.162.154/discuz/gwtv/login.php"];
 
+    //第二步，创建请求
+ 
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+  
+    [request setHTTPMethod:@"POST"];//设置请求方式为POST，默认为GET
+ 
+    NSString *str = [NSString stringWithFormat:@"username=%@&password=%@",username,password];//设置参数
+ 
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+  
+    [request setHTTPBody:data];
+    NSData *received = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+
+    NSError *jsonError = nil;
+    login  = [NSJSONSerialization JSONObjectWithData:received options:NSJSONReadingMutableLeaves error:&jsonError];
+    return login;
 }
 @end

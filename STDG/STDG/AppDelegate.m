@@ -21,8 +21,9 @@
     
     [[STClient sharedClient] fetchWebCategory];
     [[STClient sharedClient] fetchWebForum];
+    [[STClient sharedClient] fetchWebNews:16];
 
-    _tabBarController                       = [[AKTabBarController alloc]initWithTabBarHeight:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?70:50];
+    _tabBarController = [[AKTabBarController alloc]initWithTabBarHeight:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)?70:50];
     
     NewsViewController * newsViewController = [[NewsViewController alloc]init];
     

@@ -10,7 +10,7 @@
 
 @interface STForum : MTLModel <MTLJSONSerializing>
 
-@property (nonatomic,strong) NSString *id;
+@property (nonatomic,strong) NSString *aid;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *subForums;
 

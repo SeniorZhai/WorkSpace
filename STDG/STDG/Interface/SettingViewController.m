@@ -26,7 +26,7 @@
 #pragma mark setTabBar image and title
 - (NSString *)tabImageName
 {
-	return @"image-4";
+	return @"tabbar_configure_normal";
 }
 
 - (NSString *)tabTitle
@@ -36,7 +36,8 @@
 
 - (void)viewDidLoad
 {
- 
+    UIColor *bgcolor = [UIColor colorWithRed:0x0e*1.0/0xff green:0x7c*1.0/0xff blue:0xd3*1.0/0xff alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = bgcolor;
 }
 
 - (void)didReceiveMemoryWarning

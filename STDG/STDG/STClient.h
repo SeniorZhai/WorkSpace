@@ -17,6 +17,7 @@
 @property (nonatomic,strong,readonly) NSArray *postTitles;
 @property (nonatomic,strong,readonly) NSArray *news;
 @property (nonatomic,strong) NSString *newcontent;
+@property (nonatomic) NSInteger index;
 
 +(instancetype) sharedClient;
 
@@ -25,4 +26,5 @@
 - (void)fetchWebForumPosts:(int)fid;
 - (void)fetchWebNews:(int)fid;
 - (void)fetchWebNewContent:(int)aid;
+- (NSDictionary*)login:(NSString*)username withPassword:(NSString*)password;
 @end

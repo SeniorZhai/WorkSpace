@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *bgcolor = [UIColor colorWithRed:0x0e*1.0/0xff green:0x7c*1.0/0xff blue:0xd3*1.0/0xff alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = bgcolor;
     CGSize size = [UIScreen mainScreen].bounds.size;
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height - 70)];
     self.tableView.backgroundColor = [UIColor clearColor];
