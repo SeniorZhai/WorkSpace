@@ -18,6 +18,7 @@
 @property (nonatomic, strong, readwrite) NSArray *postTitles;
 @property (nonatomic, strong, readwrite) NSArray *forumArray;
 @property (nonatomic, strong, readwrite) NSArray *news;
+@property (nonatomic, strong, readwrite) NSArray *appInfos;
 @end
 
 @implementation STClient
@@ -158,7 +159,7 @@
 }
 - (NSDictionary*)login:(NSString*)username withPassword:(NSString*)password{
     NSDictionary* login;
-    NSURL *url = [NSURL URLWithString:@"http://115.28.162.154/discuz/gwtv/login.php"];
+    NSURL *url = [NSURL URLWithString:STCLIENT_LOGIN];
 
     //第二步，创建请求
  
@@ -176,5 +177,21 @@
     NSError *jsonError = nil;
     login  = [NSJSONSerialization JSONObjectWithData:received options:NSJSONReadingMutableLeaves error:&jsonError];
     return login;
+}
+- (void)appInfos:(int)did
+{
+    NSURL *url = [NSURL URLWithString:[[NSString alloc]initWithFormat:STCLIENT_APPINFOS,did]];
+    NSLog(@"%@",url);
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (! error) {
+            NSError *jsonError = nil;
+            NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+            self.appInfos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+            NSLog(@"%@",self.appInfos);
+        }
+        else{
+            
+        }}];
+    [dataTask resume];
 }
 @end

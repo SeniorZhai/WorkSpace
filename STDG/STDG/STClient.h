@@ -16,6 +16,7 @@
 @property (nonatomic,strong,readonly) NSArray *category;
 @property (nonatomic,strong,readonly) NSArray *postTitles;
 @property (nonatomic,strong,readonly) NSArray *news;
+@property (nonatomic,strong,readonly) NSArray *appInfos;
 @property (nonatomic,strong) NSString *newcontent;
 @property (nonatomic) NSInteger index;
 
@@ -26,5 +27,6 @@
 - (void)fetchWebForumPosts:(int)fid;
 - (void)fetchWebNews:(int)fid;
 - (void)fetchWebNewContent:(int)aid;
+- (void)appInfos:(int)did;
 - (NSDictionary*)login:(NSString*)username withPassword:(NSString*)password;
 @end

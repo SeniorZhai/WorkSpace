@@ -32,11 +32,13 @@
  *  登入接口 username：用户名，password：登入密码；返回{"code":3,"uid":"10","email":"...","state":"0"}
  *  code为登入状态码1为用户不存在，2为密码错误，3为登入成功，state为签约状态（-1未申请，0申请待审核，1已签约）
  */
-#define STCLIENT_LOGIN @"http://115.28.162.154/discuz/gwtv/login.php?username=%s&password=%s"
+#define STCLIENT_LOGIN @"http://115.28.162.154/discuz/gwtv/login.php"
 /*
  *  查看开发者上架的应用信息
  */
 // did表示开发者id，start表示分页偏移量，count表示本页数
-#define STCLIENT_APPINFO @"http://115.28.162.154/discuz/gwtv/appinofo?did=%d&start=%d&count=%d"
+#define STCLIENT_APPINFOS @"http://115.28.162.154/discuz/gwtv/appsinfo.php?did=%d&start=0&count=30"
+
+#define STCLIENT_APPINFO @"http://115.28.162.154/discuz/gwtv/appmarket/appinfo.php?app_id=%d"
 
 #endif

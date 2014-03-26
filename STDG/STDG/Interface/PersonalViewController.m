@@ -40,11 +40,51 @@
     [super viewDidLoad];
     UIColor *bgcolor = [UIColor colorWithRed:0x0e*1.0/0xff green:0x7c*1.0/0xff blue:0xd3*1.0/0xff alpha:1.0f];
     self.navigationController.navigationBar.barTintColor = bgcolor;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [[RACObserve([STClient sharedClient],appInfos)
+      deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(NSArray *newForecast){
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [STClient sharedClient].appInfos.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+// 返回单元格
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([STClient sharedClient].appInfos) {
+        static NSString *CellIdentifier = @"AppInfo";
+        UITableViewCell *cell           = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (! cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        }
+        cell.layer.masksToBounds  = YES;
+        NSString *name            = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"name"];
+        cell.textLabel.text       = name;
+//        NSString *price           = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"price"];
+//        if (price) {
+//            NSLog(@"price:%@",price);
+//        }
+//        cell.detailTextLabel.text = price;
+        cell.layer.cornerRadius   = 12;
+        cell.layer.masksToBounds  = YES;
+        return cell;
+    }
+    return nil;
 }
 
 - (IBAction)onClick:(id)sender {
@@ -76,6 +116,8 @@
             self.user_label.text = nameField.text;
             self.email_label.text = [uesrInfo objectForKey:@"email"];
             self.button.hidden = YES;
+            [[STClient sharedClient]appInfos:[[uesrInfo objectForKey:@"uid"] intValue]];
+            [self.tableView reloadData];
         }else if(flag == 2){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"密码错误" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
             alert.alertViewStyle = UIAlertViewStyleDefault;

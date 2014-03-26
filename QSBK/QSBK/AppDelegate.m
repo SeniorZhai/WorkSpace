@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Comment.h"
+#import "HomeViewController.h"
+#import <ASIHTTPRequest.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -15,9 +17,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    self.window.rootViewController = homeVC;
     [self.window makeKeyAndVisible];
-    
-    
+
     
     return YES;
 }

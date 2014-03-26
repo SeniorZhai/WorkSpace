@@ -12,6 +12,7 @@
                 <outlet property="credit_label" destination="3ka-7V-wWA" id="7bP-0q-aaC"/>
                 <outlet property="email_icon" destination="ZKa-PB-Mu4" id="f5O-9N-m6Z"/>
                 <outlet property="email_label" destination="7YA-E9-dDX" id="6LH-2P-qNt"/>
+                <outlet property="tableView" destination="noc-2F-dRX" id="XXu-7l-YYW"/>
                 <outlet property="user_icon" destination="W9k-98-S8e" id="4RI-fc-kpo"/>
                 <outlet property="user_label" destination="SQM-S9-Vnp" id="eaF-Ie-cnI"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sOH-OY-07a"/>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalViewController : UIViewController<UIAlertViewDelegate>
+@interface PersonalViewController : UIViewController<UIAlertViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroud;
 @property (weak, nonatomic) IBOutlet UIImageView *credit_icon;
@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *email_label;
 @property (weak, nonatomic) IBOutlet UILabel *credit_label;
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)onClick:(id)sender;
 
