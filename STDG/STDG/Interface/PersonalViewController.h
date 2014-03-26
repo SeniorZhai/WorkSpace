@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalViewController : UIViewController
+@interface PersonalViewController : UIViewController<UIAlertViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *backgroud;
+@property (weak, nonatomic) IBOutlet UIImageView *credit_icon;
+@property (weak, nonatomic) IBOutlet UIImageView *email_icon;
+@property (weak, nonatomic) IBOutlet UIImageView *user_icon;
+@property (weak, nonatomic) IBOutlet UILabel *user_label;
+@property (weak, nonatomic) IBOutlet UILabel *email_label;
+@property (weak, nonatomic) IBOutlet UILabel *credit_label;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
+- (IBAction)onClick:(id)sender;
 
 @end

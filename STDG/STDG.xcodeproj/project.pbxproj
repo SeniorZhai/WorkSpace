@@ -12,6 +12,9 @@
 		4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0118CFF9F400D8CFCF /* NewsViewController.m */; };
 		4F042E0818CFF9F400D8CFCF /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */; };
 		4F042E0918CFF9F400D8CFCF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0518CFF9F400D8CFCF /* SettingViewController.m */; };
+		4F129C0518E1B298008D769D /* credit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F129C0218E1B298008D769D /* credit_icon.png */; };
+		4F129C0618E1B298008D769D /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F129C0318E1B298008D769D /* email_icon.png */; };
+		4F129C0718E1B298008D769D /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F129C0418E1B298008D769D /* user_icon.png */; };
 		4F14F15318CD9C28008E928E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F14F15218CD9C28008E928E /* Foundation.framework */; };
 		4F14F15518CD9C28008E928E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F14F15418CD9C28008E928E /* CoreGraphics.framework */; };
 		4F14F15718CD9C28008E928E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F14F15618CD9C28008E928E /* UIKit.framework */; };
@@ -57,6 +60,9 @@
 		4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		4F042E0418CFF9F400D8CFCF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		4F042E0518CFF9F400D8CFCF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		4F129C0218E1B298008D769D /* credit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credit_icon.png; sourceTree = "<group>"; };
+		4F129C0318E1B298008D769D /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
+		4F129C0418E1B298008D769D /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		4F14F14F18CD9C28008E928E /* STDG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STDG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F14F15218CD9C28008E928E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F14F15418CD9C28008E928E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,9 +135,9 @@
 				4FBC079918E01D4B0087789B /* PostViewController.m */,
 				4F042E0218CFF9F400D8CFCF /* PersonalViewController.h */,
 				4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */,
+				4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */,
 				4F042DFE18CFF9F400D8CFCF /* ForumViewController.h */,
 				4F042DFF18CFF9F400D8CFCF /* ForumViewController.m */,
-				4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */,
 				4F3ACF6118D2FD60000882C6 /* SubjectViewController.h */,
 				4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */,
 				4F042E0418CFF9F400D8CFCF /* SettingViewController.h */,
@@ -192,6 +198,9 @@
 		4F14F15918CD9C28008E928E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F129C0218E1B298008D769D /* credit_icon.png */,
+				4F129C0318E1B298008D769D /* email_icon.png */,
+				4F129C0418E1B298008D769D /* user_icon.png */,
 				4FC6B6A518E1830400B156AB /* personal_unlogin_bg.png */,
 				4FBC079D18E0324D0087789B /* tabbar_configure_normal.png */,
 				4FBC079E18E0324D0087789B /* tabbar_userinfo_normal.png */,
@@ -321,11 +330,14 @@
 			files = (
 				4FBC07A318E0324D0087789B /* tabbar_forum_normal.png in Resources */,
 				4F14F15D18CD9C28008E928E /* InfoPlist.strings in Resources */,
+				4F129C0618E1B298008D769D /* email_icon.png in Resources */,
+				4F129C0718E1B298008D769D /* user_icon.png in Resources */,
 				4FBC079C18E024080087789B /* SettingViewController.xib in Resources */,
 				4FBC07A218E0324D0087789B /* tabbar_userinfo_normal.png in Resources */,
 				4F14F16518CD9C28008E928E /* Images.xcassets in Resources */,
 				4FBC07A418E0324D0087789B /* tabbar_article_normal.png in Resources */,
 				4FC6B6A418E1829A00B156AB /* PersonalViewController.xib in Resources */,
+				4F129C0518E1B298008D769D /* credit_icon.png in Resources */,
 				4FBC07A118E0324D0087789B /* tabbar_configure_normal.png in Resources */,
 				4FC6B6A618E1830400B156AB /* personal_unlogin_bg.png in Resources */,
 			);
