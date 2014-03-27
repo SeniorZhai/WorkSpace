@@ -19,6 +19,10 @@
 		4F0B040218E40C7E00FAFD30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B03EA18E40C7E00FAFD30 /* UIKit.framework */; };
 		4F0B040A18E40C7E00FAFD30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B040818E40C7E00FAFD30 /* InfoPlist.strings */; };
 		4F0B040C18E40C7E00FAFD30 /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0B040B18E40C7E00FAFD30 /* exampleTests.m */; };
+		4F0B041818E40CD300FAFD30 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0B041718E40CD300FAFD30 /* HomeViewController.m */; };
+		4F0B041A18E40EF400FAFD30 /* main_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041918E40EF400FAFD30 /* main_background@2x.png */; };
+		4F0B041D18E4108900FAFD30 /* bar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041B18E4108900FAFD30 /* bar_background.png */; };
+		4F0B041E18E4108900FAFD30 /* bar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041C18E4108900FAFD30 /* bar_background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,11 @@
 		4F0B040718E40C7E00FAFD30 /* exampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exampleTests-Info.plist"; sourceTree = "<group>"; };
 		4F0B040918E40C7E00FAFD30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F0B040B18E40C7E00FAFD30 /* exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleTests.m; sourceTree = "<group>"; };
+		4F0B041618E40CD300FAFD30 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4F0B041718E40CD300FAFD30 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4F0B041918E40EF400FAFD30 /* main_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_background@2x.png"; sourceTree = "<group>"; };
+		4F0B041B18E4108900FAFD30 /* bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_background.png; sourceTree = "<group>"; };
+		4F0B041C18E4108900FAFD30 /* bar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar_background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +116,7 @@
 		4F0B03EC18E40C7E00FAFD30 /* example */ = {
 			isa = PBXGroup;
 			children = (
+				4F0B041518E40CA800FAFD30 /* controller */,
 				4F0B03F518E40C7E00FAFD30 /* AppDelegate.h */,
 				4F0B03F618E40C7E00FAFD30 /* AppDelegate.m */,
 				4F0B03F818E40C7E00FAFD30 /* Images.xcassets */,
@@ -118,6 +128,9 @@
 		4F0B03ED18E40C7E00FAFD30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F0B041B18E4108900FAFD30 /* bar_background.png */,
+				4F0B041C18E4108900FAFD30 /* bar_background@2x.png */,
+				4F0B041918E40EF400FAFD30 /* main_background@2x.png */,
 				4F0B03EE18E40C7E00FAFD30 /* example-Info.plist */,
 				4F0B03EF18E40C7E00FAFD30 /* InfoPlist.strings */,
 				4F0B03F218E40C7E00FAFD30 /* main.m */,
@@ -142,6 +155,15 @@
 				4F0B040818E40C7E00FAFD30 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F0B041518E40CA800FAFD30 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F0B041618E40CD300FAFD30 /* HomeViewController.h */,
+				4F0B041718E40CD300FAFD30 /* HomeViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F0B03F118E40C7E00FAFD30 /* InfoPlist.strings in Resources */,
+				4F0B041D18E4108900FAFD30 /* bar_background.png in Resources */,
+				4F0B041E18E4108900FAFD30 /* bar_background@2x.png in Resources */,
+				4F0B041A18E40EF400FAFD30 /* main_background@2x.png in Resources */,
 				4F0B03F918E40C7E00FAFD30 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +266,7 @@
 			files = (
 				4F0B03F718E40C7E00FAFD30 /* AppDelegate.m in Sources */,
 				4F0B03F318E40C7E00FAFD30 /* main.m in Sources */,
+				4F0B041818E40CD300FAFD30 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -375,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
