@@ -75,11 +75,9 @@
         cell.layer.masksToBounds  = YES;
         NSString *name            = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"name"];
         cell.textLabel.text       = name;
-//        NSString *price           = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"price"];
-//        if (price) {
-//            NSLog(@"price:%@",price);
-//        }
-//        cell.detailTextLabel.text = price;
+        id price           = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"price"];
+     
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",price];
         cell.layer.cornerRadius   = 12;
         cell.layer.masksToBounds  = YES;
         return cell;

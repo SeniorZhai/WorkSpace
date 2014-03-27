@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C05DE262-095A-4822-8055-C217063C8DC2</string>
+	<string>FBD0AE83-E0A5-4432-815B-6A780BD1AE00</string>
 	<key>IDESourceControlProjectName</key>
-	<string>STDG</string>
+	<string>example</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BFC9F5F0-308B-46A7-A900-C3A4010049BF</key>
+		<key>A1A70E1A-9723-433C-A3CF-DB0DB36DED33</key>
 		<string>https://github.com/zt1991616/WorkSpace.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>STDG/STDG.xcworkspace</string>
+	<string>example/example.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BFC9F5F0-308B-46A7-A900-C3A4010049BF</key>
-		<string>../..</string>
+		<key>A1A70E1A-9723-433C-A3CF-DB0DB36DED33</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zt1991616/WorkSpace.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BFC9F5F0-308B-46A7-A900-C3A4010049BF</string>
+	<string>A1A70E1A-9723-433C-A3CF-DB0DB36DED33</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BFC9F5F0-308B-46A7-A900-C3A4010049BF</string>
+			<string>A1A70E1A-9723-433C-A3CF-DB0DB36DED33</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WorkSpace</string>
 		</dict>

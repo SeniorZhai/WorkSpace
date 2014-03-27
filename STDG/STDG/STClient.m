@@ -91,11 +91,13 @@
 }
 
 - (void)fetchWebCategory{
-    NSURL *url = [NSURL URLWithString:STCLIENT_CATEGORY];
+    NSURL *url = [NSURL URLWithString:@"http://m2.qiushibaike.com/article/list/images?count=50&page=1"];
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (! error) {
             NSError *jsonError = nil;
+            
             NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+            NSLog(@"%@",array);
             RACSequence * list = [array rac_sequence];
             self.category = [[list map:^(NSDictionary *item) {
                 return [MTLJSONAdapter modelOfClass:[STGategory class] fromJSONDictionary:item error:nil];
@@ -166,7 +168,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
   
     [request setHTTPMethod:@"POST"];//设置请求方式为POST，默认为GET
- 
+    
     NSString *str = [NSString stringWithFormat:@"username=%@&password=%@",username,password];//设置参数
  
     NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];

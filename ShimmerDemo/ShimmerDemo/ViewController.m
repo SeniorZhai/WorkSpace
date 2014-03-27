@@ -68,8 +68,8 @@
     
     // 闪烁的Label
     _logoLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
-    _logoLabel.text = @"Shimmer";
-    _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
+    _logoLabel.text = @"兔子快跑加载中...";
+    _logoLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30.0];
     _logoLabel.textColor = [UIColor whiteColor];
     _logoLabel.textAlignment = NSTextAlignmentCenter;
     // 设置闪烁的Label
