@@ -23,6 +23,10 @@
 		4F0B041A18E40EF400FAFD30 /* main_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041918E40EF400FAFD30 /* main_background@2x.png */; };
 		4F0B041D18E4108900FAFD30 /* bar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041B18E4108900FAFD30 /* bar_background.png */; };
 		4F0B041E18E4108900FAFD30 /* bar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B041C18E4108900FAFD30 /* bar_background@2x.png */; };
+		4FA8DC1918E44028004968DD /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8DC1818E44028004968DD /* ContentCell.m */; };
+		4FA8DC1B18E44560004968DD /* block_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8DC1A18E44560004968DD /* block_background@2x.png */; };
+		4FA8DC1F18E45485004968DD /* thumb_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8DC1E18E45484004968DD /* thumb_pic@2x.png */; };
+		4FD7526D18E512A300694D03 /* PullRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7526C18E512A300694D03 /* PullRefreshTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,12 @@
 		4F0B041918E40EF400FAFD30 /* main_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_background@2x.png"; sourceTree = "<group>"; };
 		4F0B041B18E4108900FAFD30 /* bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_background.png; sourceTree = "<group>"; };
 		4F0B041C18E4108900FAFD30 /* bar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar_background@2x.png"; sourceTree = "<group>"; };
+		4FA8DC1718E44028004968DD /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContentCell.h; path = View/ContentCell.h; sourceTree = "<group>"; };
+		4FA8DC1818E44028004968DD /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContentCell.m; path = View/ContentCell.m; sourceTree = "<group>"; };
+		4FA8DC1A18E44560004968DD /* block_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block_background@2x.png"; sourceTree = "<group>"; };
+		4FA8DC1E18E45484004968DD /* thumb_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb_pic@2x.png"; sourceTree = "<group>"; };
+		4FD7526B18E512A300694D03 /* PullRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullRefreshTableView.h; path = View/PullRefreshTableView.h; sourceTree = "<group>"; };
+		4FD7526C18E512A300694D03 /* PullRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullRefreshTableView.m; path = View/PullRefreshTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +126,7 @@
 		4F0B03EC18E40C7E00FAFD30 /* example */ = {
 			isa = PBXGroup;
 			children = (
+				4FA8DC1618E43F95004968DD /* View */,
 				4F0B041518E40CA800FAFD30 /* controller */,
 				4F0B03F518E40C7E00FAFD30 /* AppDelegate.h */,
 				4F0B03F618E40C7E00FAFD30 /* AppDelegate.m */,
@@ -128,6 +139,8 @@
 		4F0B03ED18E40C7E00FAFD30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FA8DC1E18E45484004968DD /* thumb_pic@2x.png */,
+				4FA8DC1A18E44560004968DD /* block_background@2x.png */,
 				4F0B041B18E4108900FAFD30 /* bar_background.png */,
 				4F0B041C18E4108900FAFD30 /* bar_background@2x.png */,
 				4F0B041918E40EF400FAFD30 /* main_background@2x.png */,
@@ -164,6 +177,17 @@
 				4F0B041718E40CD300FAFD30 /* HomeViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		4FA8DC1618E43F95004968DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FA8DC1718E44028004968DD /* ContentCell.h */,
+				4FA8DC1818E44028004968DD /* ContentCell.m */,
+				4FD7526B18E512A300694D03 /* PullRefreshTableView.h */,
+				4FD7526C18E512A300694D03 /* PullRefreshTableView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +265,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA8DC1B18E44560004968DD /* block_background@2x.png in Resources */,
+				4FA8DC1F18E45485004968DD /* thumb_pic@2x.png in Resources */,
 				4F0B03F118E40C7E00FAFD30 /* InfoPlist.strings in Resources */,
 				4F0B041D18E4108900FAFD30 /* bar_background.png in Resources */,
 				4F0B041E18E4108900FAFD30 /* bar_background@2x.png in Resources */,
@@ -267,6 +293,8 @@
 				4F0B03F718E40C7E00FAFD30 /* AppDelegate.m in Sources */,
 				4F0B03F318E40C7E00FAFD30 /* main.m in Sources */,
 				4F0B041818E40CD300FAFD30 /* HomeViewController.m in Sources */,
+				4FA8DC1918E44028004968DD /* ContentCell.m in Sources */,
+				4FD7526D18E512A300694D03 /* PullRefreshTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +495,7 @@
 				4F0B041118E40C7E00FAFD30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F0B041218E40C7E00FAFD30 /* Build configuration list for PBXNativeTarget "exampleTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +504,7 @@
 				4F0B041418E40C7E00FAFD30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

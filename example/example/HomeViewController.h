@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullRefreshTableView.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong)UITableView* contentView;
+@property (nonatomic,strong)PullRefreshTableView* contentView;
 
 @end
