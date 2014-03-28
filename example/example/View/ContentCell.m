@@ -21,10 +21,10 @@
         _image = [[UIImageView alloc] init];
         
         
-        [self addSubview:_image];
-        [self addSubview:_name];
-        [self addSubview:_icon];
-        [self addSubview:_content];
+        [self.contentView addSubview:_image];
+        [self.contentView addSubview:_name];
+        [self.contentView addSubview:_icon];
+        [self.contentView addSubview:_content];
     }
     return self;
 }

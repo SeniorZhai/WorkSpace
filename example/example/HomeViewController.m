@@ -30,7 +30,7 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bar_background"] forBarMetrics:UIBarMetricsDefault];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background"]];
-    self.contentView = [[PullRefreshTableView alloc]initWithFrame:CGRectMake(20, 20, kDeviceWidth - 40, KDeviceHeight - 90)];
+    self.contentView = [[PullRefreshTableView alloc]initWithFrame:CGRectMake(10, 20, kDeviceWidth - 40, KDeviceHeight - 90)];
     self.contentView.backgroundColor = [UIColor clearColor];
     self.contentView.dataSource = self;
     self.contentView.delegate = self;
@@ -41,28 +41,37 @@
 // 返回单元格
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    double height = 0;
     static NSString *CellIdentifier = @"AppInfo";
-    double height = 20;
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (! cell) {
         cell = [[ContentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+    cell.icon.image = [UIImage imageNamed:@"thumb_pic"];
+    cell.icon.frame = CGRectMake(40, height+40, 64, 64);
+    height += 104;
+    cell.name.text = @"用户名";
+    cell.name.frame = CGRectMake(114, 74, 80, 30);
+    cell.content.text = @"从认识到现在4年了，委屈过，失望过，但从没放弃过，年前我家人也带他见过，父母为了我没敢说个不字，为了他，甚至和亲哥哥都闹翻了，前段时间为了见他父母的事一直吵架，一直不肯让我见，今天才发现他和我最好的闺蜜好上了，突然自己变成了小三，现在想死的心都有了";
+    cell.content.frame = CGRectMake(40,height, kDeviceWidth - 120, 0);
     cell.content.numberOfLines = 0;
-    cell.content.frame = CGRectMake(10, 10, 640, 2000);
-    cell.content.text = @"新人第一次，不会歌…。\n今天看见朋友发空间心情，亲人去世，心情各种不好，本想评论节哀，，，没错，就是你想的那样，我特么点了个“赞”，，，背后一股淫风………";
+    cell.content.lineBreakMode = NSLineBreakByWordWrapping;
     [cell.content sizeToFit];
-  
-    height += cell.content.frame.size.height;
-
-    cell.image.image = [UIImage imageNamed:@"block_background"];
+    height += cell.content.frame.size.height+20;
+   
     cell.image.frame = CGRectMake(0, 0, kDeviceWidth, height+20);
-    
+    cell.image.image = [[UIImage imageNamed:@"block_background"]stretchableImageWithLeftCapWidth:0 topCapHeight:10];
     cell.frame = CGRectMake(0, 0, kDeviceWidth, height+20);
-    
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+// cell的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
+}
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 30;

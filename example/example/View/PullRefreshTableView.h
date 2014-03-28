@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define kHeight 65
+#define kHeight 100
 @interface PullRefreshTableView : UITableView
 
 @property (nonatomic,assign) BOOL isLoading;
