@@ -8,7 +8,8 @@
 
 #import "PersonalViewController.h"
 #import "STClient.h"
-
+#import "AppInfoCell.h"
+#import "OrderInfoViewController.h"
 @interface PersonalViewController ()
 
 @end
@@ -58,26 +59,32 @@
 {
     return [STClient sharedClient].appInfos.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    OrderInfoViewController *orderInfoViewController = [[OrderInfoViewController alloc] init];
+    [self.navigationController pushViewController:orderInfoViewController animated:YES];
 }
 // 返回单元格
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([STClient sharedClient].appInfos) {
         static NSString *CellIdentifier = @"AppInfo";
-        UITableViewCell *cell           = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        AppInfoCell *cell           = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (! cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+            cell = [[AppInfoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         }
         cell.layer.masksToBounds  = YES;
         NSString *name            = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"name"];
-        cell.textLabel.text       = name;
-        id price           = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"price"];
-     
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",price];
+        cell.nameLabel.text       = name;
+        id price                  = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"price"];
+        
+        cell.price.text = [NSString stringWithFormat:@"售价：%@",price];
+        id version                  = [[[STClient sharedClient].appInfos objectAtIndex:indexPath.row] objectForKey:@"version"];
+        cell.version.text = [NSString stringWithFormat:@"版本：%@",version];
         cell.layer.cornerRadius   = 12;
         cell.layer.masksToBounds  = YES;
         return cell;
