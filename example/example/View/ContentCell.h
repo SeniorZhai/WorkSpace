@@ -13,6 +13,7 @@
 @property UIImageView* icon;
 @property UILabel* name;
 @property UILabel* content;
+@property UIImageView* background;
 @property UIImageView* image;
 
 @end

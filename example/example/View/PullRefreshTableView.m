@@ -108,6 +108,7 @@
         [self loadMore];
     }
 }
+// 刷新动画
 - (void)refresh
 {
     isLoading = YES;
@@ -119,7 +120,7 @@
     [UIView commitAnimations];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:4];
 }
-
+// 加载动画
 - (void)loadMore
 {
     isLoading = YES;
@@ -130,6 +131,7 @@
     [UIView commitAnimations];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:4];
 }
+// 停止刷新
 - (void)stopRefresh
 {
     isLoading = NO;

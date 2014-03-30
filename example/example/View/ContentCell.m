@@ -18,13 +18,14 @@
         _icon = [[UIImageView alloc]init];
         _name = [[UILabel alloc] init];
         _content = [[UILabel alloc] init];
+        _background = [[UIImageView alloc] init];
         _image = [[UIImageView alloc] init];
         
-        
-        [self.contentView addSubview:_image];
+        [self.contentView addSubview:_background];
         [self.contentView addSubview:_name];
         [self.contentView addSubview:_icon];
         [self.contentView addSubview:_content];
+        [self.contentView addSubview:_image];
     }
     return self;
 }

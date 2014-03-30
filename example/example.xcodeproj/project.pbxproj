@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0010E818E69136008D780C /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0010E718E69136008D780C /* Content.m */; };
+		4F0010EB18E69C2F008D780C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0010EA18E69C2F008D780C /* User.m */; };
 		4F0B03E718E40C7E00FAFD30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B03E618E40C7E00FAFD30 /* Foundation.framework */; };
 		4F0B03E918E40C7E00FAFD30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B03E818E40C7E00FAFD30 /* CoreGraphics.framework */; };
 		4F0B03EB18E40C7E00FAFD30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B03EA18E40C7E00FAFD30 /* UIKit.framework */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F0010E618E69136008D780C /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Content.h; path = Model/Content.h; sourceTree = "<group>"; };
+		4F0010E718E69136008D780C /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Content.m; path = Model/Content.m; sourceTree = "<group>"; };
+		4F0010E918E69C2F008D780C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		4F0010EA18E69C2F008D780C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		4F0B03E318E40C7E00FAFD30 /* example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0B03E618E40C7E00FAFD30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F0B03E818E40C7E00FAFD30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0010E518E6911C008D780C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F0010E618E69136008D780C /* Content.h */,
+				4F0010E718E69136008D780C /* Content.m */,
+				4F0010E918E69C2F008D780C /* User.h */,
+				4F0010EA18E69C2F008D780C /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4F0B03DA18E40C7E00FAFD30 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +143,7 @@
 		4F0B03EC18E40C7E00FAFD30 /* example */ = {
 			isa = PBXGroup;
 			children = (
+				4F0010E518E6911C008D780C /* Model */,
 				4FA8DC1618E43F95004968DD /* View */,
 				4F0B041518E40CA800FAFD30 /* controller */,
 				4F0B03F518E40C7E00FAFD30 /* AppDelegate.h */,
@@ -237,6 +255,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "翟涛";
 				TargetAttributes = {
+					4F0B03E218E40C7E00FAFD30 = {
+						DevelopmentTeam = 6XLEA9NT68;
+					};
 					4F0B03FD18E40C7E00FAFD30 = {
 						TestTargetID = 4F0B03E218E40C7E00FAFD30;
 					};
@@ -291,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F0B03F718E40C7E00FAFD30 /* AppDelegate.m in Sources */,
+				4F0010EB18E69C2F008D780C /* User.m in Sources */,
+				4F0010E818E69136008D780C /* Content.m in Sources */,
 				4F0B03F318E40C7E00FAFD30 /* main.m in Sources */,
 				4F0B041818E40CD300FAFD30 /* HomeViewController.m in Sources */,
 				4FA8DC1918E44028004968DD /* ContentCell.m in Sources */,
@@ -413,11 +436,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -427,11 +453,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "example/example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PullRefreshTableView.h"
 
-@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate>
 
 @property (nonatomic,strong)PullRefreshTableView* contentView;
-
+@property (nonatomic,strong)NSURLConnection* connection;
+@property (nonatomic,strong)NSMutableArray* qiushi;
 @end

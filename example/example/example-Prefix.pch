@@ -23,5 +23,5 @@
 #define DayURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/day?count=%d&page=%d",count,page]
 #define WeekURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/week?count=%d&page=%d",count,page]
 #define MonthURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/month?count=%d&page=%d",count,page]
-
+#define ImageURLSmallString(sid,id,image) [NSString stringWithFormat:@"http://pic.qiushibaike.com/system/pictures/%@/%@/small/%@",sid,id,image]
 #endif
