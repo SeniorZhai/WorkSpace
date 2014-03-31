@@ -25,7 +25,7 @@
 //  分页获取某论坛板块的主题信息
 #define STCLIENT_FORUM_POSTS_TITLE @"http://115.28.162.154/discuz/gwtv/postTitle.php?fid=%d&start=%d&count=%d"
 //  分页获取主题下的帖子,其中tid：主题id，start：从第一个开始查询（即偏移量），count：本页查询最大数量
-#define STCLIENT_FORUM_POSTS @"http://115.28.162.154/discuz/gwtv/post?tid=%d&start=%d&count=%d"
+#define STCLIENT_FORUM_POSTS @"http://115.28.162.154/discuz/gwtv/post.php?tid=%d&start=%d&count=%d"
 //  跟帖接口，post方法提交，其中fid：板块id,tid：主题id,author：发帖者用户名，mesage：帖子内容，authorid：发帖者id;返回0:表示发帖失败，1为发帖成功
 #define STCLIENT_FORUM_REPLY @"http://115.28.168.154/discuz/gwtv/replyPost.php?fid=%d&tid=%d&author=%s&message=%s&authorid=%d"
 /*  

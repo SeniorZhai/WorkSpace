@@ -17,6 +17,8 @@
 @property (nonatomic,strong,readonly) NSArray *postTitles;
 @property (nonatomic,strong,readonly) NSArray *news;
 @property (nonatomic,strong,readonly) NSArray *appInfos;
+@property (nonatomic,strong,readonly) NSArray *fourum;
+
 @property (nonatomic,strong) NSString *newcontent;
 @property (nonatomic) NSInteger index;
 
@@ -29,4 +31,5 @@
 - (void)fetchWebNewContent:(int)aid;
 - (void)appInfos:(int)did;
 - (NSDictionary*)login:(NSString*)username withPassword:(NSString*)password;
+- (void)fourumPosts:(int)tid withPage:(int)count;
 @end

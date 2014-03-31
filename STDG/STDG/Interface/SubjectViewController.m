@@ -68,6 +68,7 @@
 {
     //
     NSLog(@"%@",[[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"]);
+    [[STClient sharedClient] fourumPosts:[[[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"] intValue] withPage:1];
 }
 - (void)didReceiveMemoryWarning
 {

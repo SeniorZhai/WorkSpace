@@ -194,4 +194,20 @@
         }}];
     [dataTask resume];
 }
+- (void)fourumPosts:(int)tid withPage:(int)count
+{
+    NSURL *url = [NSURL URLWithString:[[NSString alloc]initWithFormat:STCLIENT_FORUM_POSTS,tid,count,20]];
+    NSLog(@"%@",url);
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (! error) {
+            NSError *jsonError = nil;
+            
+            id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+            NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        }
+        else{
+            
+        }}];
+    [dataTask resume];
+}
 @end
