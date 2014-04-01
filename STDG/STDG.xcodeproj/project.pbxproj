@@ -48,6 +48,8 @@
 		4FBC07A418E0324D0087789B /* tabbar_article_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC07A018E0324D0087789B /* tabbar_article_normal.png */; };
 		4FC6B6A418E1829A00B156AB /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */; };
 		4FC6B6A618E1830400B156AB /* personal_unlogin_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6B6A518E1830400B156AB /* personal_unlogin_bg.png */; };
+		4FD5FFCA18EA5F5200DF594E /* ForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5FFC918EA5F5200DF594E /* ForumCell.m */; };
+		4FD5FFCD18EA60A500DF594E /* ForumPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5FFCC18EA60A500DF594E /* ForumPostController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,10 @@
 		4FBC07A018E0324D0087789B /* tabbar_article_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_article_normal.png; sourceTree = "<group>"; };
 		4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		4FC6B6A518E1830400B156AB /* personal_unlogin_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personal_unlogin_bg.png; sourceTree = "<group>"; };
+		4FD5FFC818EA5F5200DF594E /* ForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumCell.h; sourceTree = "<group>"; };
+		4FD5FFC918EA5F5200DF594E /* ForumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumCell.m; sourceTree = "<group>"; };
+		4FD5FFCB18EA60A500DF594E /* ForumPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumPostController.h; sourceTree = "<group>"; };
+		4FD5FFCC18EA60A500DF594E /* ForumPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumPostController.m; sourceTree = "<group>"; };
 		5DDDE70D37114F7F96D13080 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		76E3EED489744EBD81167E8C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +167,8 @@
 				4F042DFF18CFF9F400D8CFCF /* ForumViewController.m */,
 				4F3ACF6118D2FD60000882C6 /* SubjectViewController.h */,
 				4F3ACF6218D2FD60000882C6 /* SubjectViewController.m */,
+				4FD5FFCB18EA60A500DF594E /* ForumPostController.h */,
+				4FD5FFCC18EA60A500DF594E /* ForumPostController.m */,
 				4F042E0418CFF9F400D8CFCF /* SettingViewController.h */,
 				4F042E0518CFF9F400D8CFCF /* SettingViewController.m */,
 				4FBC079B18E024080087789B /* SettingViewController.xib */,
@@ -176,6 +184,8 @@
 			children = (
 				4F0B042018E41BC100FAFD30 /* AppInfoCell.h */,
 				4F0B042118E41BC100FAFD30 /* AppInfoCell.m */,
+				4FD5FFC818EA5F5200DF594E /* ForumCell.h */,
+				4FD5FFC918EA5F5200DF594E /* ForumCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -442,12 +452,14 @@
 				4FA8DC2618E45C09004968DD /* OrderInfoViewController.m in Sources */,
 				4F14F16318CD9C28008E928E /* AppDelegate.m in Sources */,
 				4F042E0618CFF9F400D8CFCF /* ForumViewController.m in Sources */,
+				4FD5FFCA18EA5F5200DF594E /* ForumCell.m in Sources */,
 				4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */,
 				4F0B042218E41BC100FAFD30 /* AppInfoCell.m in Sources */,
 				4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */,
 				4F14F15F18CD9C28008E928E /* main.m in Sources */,
 				4F14F18A18CDA31A008E928E /* STClient.m in Sources */,
 				4F042E0918CFF9F400D8CFCF /* SettingViewController.m in Sources */,
+				4FD5FFCD18EA60A500DF594E /* ForumPostController.m in Sources */,
 				4F3C2F4118D18039005B4F53 /* STGategory.m in Sources */,
 				4FBC079A18E01D4B0087789B /* PostViewController.m in Sources */,
 			);

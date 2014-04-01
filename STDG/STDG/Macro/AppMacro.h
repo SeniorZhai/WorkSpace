@@ -36,7 +36,10 @@
 /*
  *  查看开发者上架的应用信息
  */
-// did表示开发者id，start表示分页偏移量，count表示本页数
+/*
+ * did表示开发者id，start表示分页偏移量，count表示本页数
+
+ */
 #define STCLIENT_APPINFOS @"http://115.28.162.154/discuz/gwtv/appsinfo.php?did=%d&start=0&count=30"
 
 #define STCLIENT_APPINFO @"http://115.28.162.154/discuz/gwtv/appmarket/appinfo.php?app_id=%d"
