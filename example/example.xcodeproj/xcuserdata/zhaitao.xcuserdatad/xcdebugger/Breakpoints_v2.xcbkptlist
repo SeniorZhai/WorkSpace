@@ -17,6 +17,36 @@
             endingLineNumber = "15"
             landmarkName = "created_at"
             landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Content created_at]"
+                  moduleName = "example"
+                  urlString = "file:///Users/zhaitao/Documents/WorkSpace/example/example/Model/Content.h"
+                  timestampString = "418111613.850993"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Content setCreated_at:]"
+                  moduleName = "example"
+                  urlString = "file:///Users/zhaitao/Documents/WorkSpace/example/example/Model/Content.h"
+                  timestampString = "418111613.851191"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

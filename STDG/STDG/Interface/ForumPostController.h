@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForumPostController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ForumPostController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDelegate>
+
+- (id)initWithURL:(NSURL *)url;
 
 @end

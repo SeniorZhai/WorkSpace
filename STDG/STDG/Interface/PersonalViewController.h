@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *credit_label;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSDictionary* uesrInfo;
 
 - (IBAction)onClick:(id)sender;
 

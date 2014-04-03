@@ -18,5 +18,8 @@
 - (IBAction)bn:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *left;
 @property (weak, nonatomic) IBOutlet UITextField *right;
+- (IBAction)dateChanged:(id)sender;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePickerInput2;
+- (IBAction)dateChanged2:(id)sender;
 
 @end

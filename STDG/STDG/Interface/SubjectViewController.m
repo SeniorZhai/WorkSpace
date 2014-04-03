@@ -8,6 +8,8 @@
 
 #import "SubjectViewController.h"
 #import "STClient.h"
+#import "ForumPostController.h"
+#import "AppMacro.h"
 
 @interface SubjectViewController ()
 
@@ -66,9 +68,13 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //
-    NSLog(@"%@",[[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"]);
-    [[STClient sharedClient] fourumPosts:[[[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"] intValue] withPage:1];
+    id aid = [[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"];
+//    [[STClient sharedClient] fourumPosts:[[[[STClient sharedClient].postTitles objectAtIndex:indexPath.row] objectForKey:@"id"] intValue] withPage:1];
+    NSURL* url = [[NSURL alloc]initWithString:[[NSString alloc]initWithFormat:STCLIENT_FORUM_POSTS,[aid intValue],1,20]];
+    [[NSUserDefaults standardUserDefaults] setInteger:[aid integerValue] forKey:@"tid"];
+    ForumPostController *post = [[ForumPostController alloc]initWithURL:url];
+    [post setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:post animated:YES];
 }
 - (void)didReceiveMemoryWarning
 {

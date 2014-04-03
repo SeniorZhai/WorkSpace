@@ -9,6 +9,7 @@
                 <outlet property="appName" destination="6Q6-hv-PTJ" id="fK0-cW-T0t"/>
                 <outlet property="dataView" destination="Jev-au-O5L" id="eZQ-1i-nzm"/>
                 <outlet property="datePickerInput" destination="ksW-ux-I8c" id="V04-ww-HeU"/>
+                <outlet property="datePickerInput2" destination="X7T-le-fsK" id="NcR-oH-XUp"/>
                 <outlet property="left" destination="ALI-pU-67h" id="MGF-NN-rJT"/>
                 <outlet property="pirceLabe" destination="lmG-df-q80" id="ACg-ZL-dLI"/>
                 <outlet property="right" destination="sTc-os-RMv" id="2yL-KA-JqR"/>
@@ -130,6 +131,47 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
             </timeZone>
+            <connections>
+                <action selector="dateChanged:" destination="-1" eventType="valueChanged" id="5mo-01-xWU"/>
+            </connections>
+        </datePicker>
+        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="X7T-le-fsK">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <date key="date" timeIntervalSinceReferenceDate="417619859.45420301">
+                <!--2014-03-27 13:30:59 +0000-->
+            </date>
+            <date key="minimumDate" timeIntervalSinceReferenceDate="284032800">
+                <!--2010-01-01 10:00:00 +0000-->
+            </date>
+            <date key="maximumDate" timeIntervalSinceReferenceDate="473252400">
+                <!--2015-12-31 11:00:00 +0000-->
+            </date>
+            <timeZone key="timeZone" name="America/Los_Angeles">
+                <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+            </timeZone>
+            <connections>
+                <action selector="dateChanged2:" destination="-1" eventType="valueChanged" id="dje-EO-Ugh"/>
+                <action selector="dateChanged:" destination="-1" eventType="valueChanged" id="EKN-0x-iJN"/>
+            </connections>
         </datePicker>
     </objects>
     <resources>

@@ -11,11 +11,10 @@
 #import "AppInfoCell.h"
 #import "OrderInfoViewController.h"
 @interface PersonalViewController ()
-
 @end
 
 @implementation PersonalViewController
-
+@synthesize uesrInfo;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -95,6 +94,10 @@
 - (IBAction)onClick:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登入" message:@"请输入用户名和密码" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [alert textFieldAtIndex:0].text = [userDefaults objectForKey:@"username"];
+    [alert textFieldAtIndex:1].text = [userDefaults objectForKey:@"password"];
+    [userDefaults setBool:NO forKey:@"isLogin"];
     [alert show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -102,9 +105,15 @@
     if (buttonIndex == 1) {
         UITextField* nameField = [alertView textFieldAtIndex:0];
         UITextField* passwordField = [alertView textFieldAtIndex:1];
-        NSDictionary* uesrInfo = [[STClient sharedClient] login:nameField.text withPassword:passwordField.text];
+        
+        uesrInfo = [[STClient sharedClient] login:nameField.text withPassword:passwordField.text];
         int flag = [[uesrInfo objectForKey:@"code"] intValue];
         if (flag == 3) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:nameField.text forKey:@"username"];
+            [userDefaults setObject:passwordField.text forKey:@"password"];
+            [userDefaults setInteger:[[uesrInfo objectForKey:@"uid"]integerValue] forKey:@"uid"];
+            [userDefaults setBool:YES forKey:@"isLogin"];
             self.credit_icon.hidden = NO;
             self.email_icon.hidden = NO;
             self.user_icon.hidden = NO;

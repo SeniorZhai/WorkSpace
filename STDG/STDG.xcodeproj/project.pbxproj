@@ -12,7 +12,6 @@
 		4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0118CFF9F400D8CFCF /* NewsViewController.m */; };
 		4F042E0818CFF9F400D8CFCF /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */; };
 		4F042E0918CFF9F400D8CFCF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F042E0518CFF9F400D8CFCF /* SettingViewController.m */; };
-		4F0B042218E41BC100FAFD30 /* AppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0B042118E41BC100FAFD30 /* AppInfoCell.m */; };
 		4F0B043118E4238A00FAFD30 /* ic_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B042B18E4238A00FAFD30 /* ic_calendar.png */; };
 		4F0B043218E4238A00FAFD30 /* ic_dollar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B042C18E4238A00FAFD30 /* ic_dollar.png */; };
 		4F0B043318E4238A00FAFD30 /* ic_order_history.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B042D18E4238A00FAFD30 /* ic_order_history.png */; };
@@ -46,9 +45,11 @@
 		4FBC07A218E0324D0087789B /* tabbar_userinfo_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC079E18E0324D0087789B /* tabbar_userinfo_normal.png */; };
 		4FBC07A318E0324D0087789B /* tabbar_forum_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC079F18E0324D0087789B /* tabbar_forum_normal.png */; };
 		4FBC07A418E0324D0087789B /* tabbar_article_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FBC07A018E0324D0087789B /* tabbar_article_normal.png */; };
+		4FC3A3A418EBBAD400024EC2 /* AppInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3A3A118EBBAD400024EC2 /* AppInfoCell.m */; };
+		4FC3A3A518EBBAD400024EC2 /* ForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3A3A318EBBAD400024EC2 /* ForumCell.m */; };
+		4FC3A3A818EBE7E900024EC2 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3A3A718EBE7E900024EC2 /* InputBar.m */; };
 		4FC6B6A418E1829A00B156AB /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */; };
 		4FC6B6A618E1830400B156AB /* personal_unlogin_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6B6A518E1830400B156AB /* personal_unlogin_bg.png */; };
-		4FD5FFCA18EA5F5200DF594E /* ForumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5FFC918EA5F5200DF594E /* ForumCell.m */; };
 		4FD5FFCD18EA60A500DF594E /* ForumPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5FFCC18EA60A500DF594E /* ForumPostController.m */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +72,6 @@
 		4F042E0318CFF9F400D8CFCF /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		4F042E0418CFF9F400D8CFCF /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		4F042E0518CFF9F400D8CFCF /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		4F0B042018E41BC100FAFD30 /* AppInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoCell.h; sourceTree = "<group>"; };
-		4F0B042118E41BC100FAFD30 /* AppInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoCell.m; sourceTree = "<group>"; };
 		4F0B042B18E4238A00FAFD30 /* ic_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_calendar.png; sourceTree = "<group>"; };
 		4F0B042C18E4238A00FAFD30 /* ic_dollar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_dollar.png; sourceTree = "<group>"; };
 		4F0B042D18E4238A00FAFD30 /* ic_order_history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_order_history.png; sourceTree = "<group>"; };
@@ -117,10 +116,14 @@
 		4FBC079E18E0324D0087789B /* tabbar_userinfo_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_userinfo_normal.png; sourceTree = "<group>"; };
 		4FBC079F18E0324D0087789B /* tabbar_forum_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_forum_normal.png; sourceTree = "<group>"; };
 		4FBC07A018E0324D0087789B /* tabbar_article_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_article_normal.png; sourceTree = "<group>"; };
+		4FC3A3A018EBBAD400024EC2 /* AppInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoCell.h; sourceTree = "<group>"; };
+		4FC3A3A118EBBAD400024EC2 /* AppInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoCell.m; sourceTree = "<group>"; };
+		4FC3A3A218EBBAD400024EC2 /* ForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumCell.h; sourceTree = "<group>"; };
+		4FC3A3A318EBBAD400024EC2 /* ForumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumCell.m; sourceTree = "<group>"; };
+		4FC3A3A618EBE7E900024EC2 /* InputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputBar.h; path = STDG/View/InputBar.h; sourceTree = SOURCE_ROOT; };
+		4FC3A3A718EBE7E900024EC2 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputBar.m; path = STDG/View/InputBar.m; sourceTree = SOURCE_ROOT; };
 		4FC6B6A318E1829A00B156AB /* PersonalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		4FC6B6A518E1830400B156AB /* personal_unlogin_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personal_unlogin_bg.png; sourceTree = "<group>"; };
-		4FD5FFC818EA5F5200DF594E /* ForumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumCell.h; sourceTree = "<group>"; };
-		4FD5FFC918EA5F5200DF594E /* ForumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumCell.m; sourceTree = "<group>"; };
 		4FD5FFCB18EA60A500DF594E /* ForumPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumPostController.h; sourceTree = "<group>"; };
 		4FD5FFCC18EA60A500DF594E /* ForumPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumPostController.m; sourceTree = "<group>"; };
 		5DDDE70D37114F7F96D13080 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -152,10 +155,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4F042DFD18CFF9F400D8CFCF /* Interface */ = {
+		4F042DFD18CFF9F400D8CFCF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4F0B041F18E41B9A00FAFD30 /* View */,
 				4F042E0018CFF9F400D8CFCF /* NewsViewController.h */,
 				4F042E0118CFF9F400D8CFCF /* NewsViewController.m */,
 				4FBC079818E01D4B0087789B /* PostViewController.h */,
@@ -176,18 +178,22 @@
 				4FA8DC2418E45C09004968DD /* OrderInfoViewController.h */,
 				4FA8DC2518E45C09004968DD /* OrderInfoViewController.m */,
 			);
+			name = Controller;
 			path = Interface;
 			sourceTree = "<group>";
 		};
 		4F0B041F18E41B9A00FAFD30 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4F0B042018E41BC100FAFD30 /* AppInfoCell.h */,
-				4F0B042118E41BC100FAFD30 /* AppInfoCell.m */,
-				4FD5FFC818EA5F5200DF594E /* ForumCell.h */,
-				4FD5FFC918EA5F5200DF594E /* ForumCell.m */,
+				4FC3A3A018EBBAD400024EC2 /* AppInfoCell.h */,
+				4FC3A3A118EBBAD400024EC2 /* AppInfoCell.m */,
+				4FC3A3A218EBBAD400024EC2 /* ForumCell.h */,
+				4FC3A3A318EBBAD400024EC2 /* ForumCell.m */,
+				4FC3A3A618EBE7E900024EC2 /* InputBar.h */,
+				4FC3A3A718EBE7E900024EC2 /* InputBar.m */,
 			);
 			name = View;
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		4F14F14618CD9C28008E928E = {
@@ -226,7 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				4F3ACF6018D2CE7D000882C6 /* Macro */,
-				4F042DFD18CFF9F400D8CFCF /* Interface */,
+				4F0B041F18E41B9A00FAFD30 /* View */,
+				4F042DFD18CFF9F400D8CFCF /* Controller */,
 				4F14F18418CD9C83008E928E /* Models */,
 				4F14F16118CD9C28008E928E /* AppDelegate.h */,
 				4F14F16218CD9C28008E928E /* AppDelegate.m */,
@@ -452,13 +459,14 @@
 				4FA8DC2618E45C09004968DD /* OrderInfoViewController.m in Sources */,
 				4F14F16318CD9C28008E928E /* AppDelegate.m in Sources */,
 				4F042E0618CFF9F400D8CFCF /* ForumViewController.m in Sources */,
-				4FD5FFCA18EA5F5200DF594E /* ForumCell.m in Sources */,
+				4FC3A3A418EBBAD400024EC2 /* AppInfoCell.m in Sources */,
 				4F3ACF6318D2FD60000882C6 /* SubjectViewController.m in Sources */,
-				4F0B042218E41BC100FAFD30 /* AppInfoCell.m in Sources */,
 				4F042E0718CFF9F400D8CFCF /* NewsViewController.m in Sources */,
 				4F14F15F18CD9C28008E928E /* main.m in Sources */,
 				4F14F18A18CDA31A008E928E /* STClient.m in Sources */,
+				4FC3A3A818EBE7E900024EC2 /* InputBar.m in Sources */,
 				4F042E0918CFF9F400D8CFCF /* SettingViewController.m in Sources */,
+				4FC3A3A518EBBAD400024EC2 /* ForumCell.m in Sources */,
 				4FD5FFCD18EA60A500DF594E /* ForumPostController.m in Sources */,
 				4F3C2F4118D18039005B4F53 /* STGategory.m in Sources */,
 				4FBC079A18E01D4B0087789B /* PostViewController.m in Sources */,
