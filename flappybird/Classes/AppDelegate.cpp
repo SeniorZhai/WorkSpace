@@ -17,7 +17,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLView::create("My Game");
-        glview->setDesignResolutionSize(288, 512, ResolutionPolicy::FIXED_WIDTH);
+        glview->setDesignResolutionSize(288, 512, ResolutionPolicy::SHOW_ALL);
         director->setOpenGLView(glview);
     }
     this->setResourceSearchResolution();
