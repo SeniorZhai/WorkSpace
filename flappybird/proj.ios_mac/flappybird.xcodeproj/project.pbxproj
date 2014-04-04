@@ -21,6 +21,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		4FA5B14018EEA5F9006FBFD6 /* BridSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5B13E18EEA5F9006FBFD6 /* BridSprite.cpp */; };
+		4FA5B14118EEA5F9006FBFD6 /* BridSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5B13E18EEA5F9006FBFD6 /* BridSprite.cpp */; };
 		4FC2D10B18ED4F45005E61F6 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FC2D0FB18ED4F45005E61F6 /* Marker Felt.ttf */; };
 		4FC2D11318ED4F45005E61F6 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC2D10418ED4F45005E61F6 /* splash.png */; };
 		4FC2D11418ED4F45005E61F6 /* sfx_die.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 4FC2D10618ED4F45005E61F6 /* sfx_die.ogg */; };
@@ -240,6 +242,8 @@
 		1D6058910D05DD3D006BFB54 /* flappybird iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "flappybird iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4FA5B13E18EEA5F9006FBFD6 /* BridSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BridSprite.cpp; path = ../Classes/BridSprite.cpp; sourceTree = "<group>"; };
+		4FA5B13F18EEA5F9006FBFD6 /* BridSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BridSprite.h; path = ../Classes/BridSprite.h; sourceTree = "<group>"; };
 		4FC2D0FB18ED4F45005E61F6 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		4FC2D10418ED4F45005E61F6 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		4FC2D10618ED4F45005E61F6 /* sfx_die.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_die.ogg; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 				4FC2D12818ED5676005E61F6 /* WelcomeScene.h */,
 				4FC2D12B18ED56BE005E61F6 /* BackgroundLayer.cpp */,
 				4FC2D12C18ED56BE005E61F6 /* BackgroundLayer.h */,
+				4FA5B13E18EEA5F9006FBFD6 /* BridSprite.cpp */,
+				4FA5B13F18EEA5F9006FBFD6 /* BridSprite.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -758,6 +764,7 @@
 				4FC2D12918ED5676005E61F6 /* WelcomeScene.cpp in Sources */,
 				4FC2D13118ED5A4B005E61F6 /* AtlasLoader.cpp in Sources */,
 				4FC2D12118ED4FBA005E61F6 /* LoadingScene.cpp in Sources */,
+				4FA5B14018EEA5F9006FBFD6 /* BridSprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +779,7 @@
 				4FC2D13218ED5A4B005E61F6 /* AtlasLoader.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				4FC2D12E18ED56BE005E61F6 /* BackgroundLayer.cpp in Sources */,
+				4FA5B14118EEA5F9006FBFD6 /* BridSprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
