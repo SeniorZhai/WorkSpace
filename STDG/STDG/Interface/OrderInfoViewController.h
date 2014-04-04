@@ -22,4 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePickerInput2;
 - (IBAction)dateChanged2:(id)sender;
 
+- (id)initWithId:(int)aid;
+
 @end

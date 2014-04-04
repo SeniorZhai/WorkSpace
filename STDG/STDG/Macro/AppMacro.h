@@ -44,4 +44,5 @@
 
 #define STCLIENT_APPINFO @"http://115.28.162.154/discuz/gwtv/appmarket/appinfo.php?app_id=%d"
 
+#define STCLIENT_ORDERINFO @"http://115.28.162.154/discuz/gwtv/appmarket/orderinfo.php?app_id=%d&author_name=%@&from=gwtv&starttime=%@&endtime=%@&page_no=%d&page_size=10"
 #endif

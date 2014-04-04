@@ -52,7 +52,7 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate        = self;
     self.tableView.dataSource      = self;
-    self.tableView.separatorColor  = [UIColor colorWithWhite:1 alpha:0.2];
+//    self.tableView.separatorColor  = [UIColor colorWithWhite:1 alpha:0.2];
     self.tableView.pagingEnabled   = YES;
     [self.view addSubview:self.tableView];
 
