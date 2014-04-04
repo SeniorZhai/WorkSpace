@@ -24,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"咨询";
+        self.title = @"资讯";
     }
     return self;
 }

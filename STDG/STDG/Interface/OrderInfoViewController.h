@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrderInfoViewController : UIViewController
+@interface OrderInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *appName;
 @property (weak, nonatomic) IBOutlet UILabel *pirceLabe;

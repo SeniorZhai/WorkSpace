@@ -8,9 +8,10 @@
 
 #import "OrderInfoViewController.h"
 #import "AppMacro.h"
+#import "OderInfoCell.h"
+
 @interface OrderInfoViewController ()
 @property (nonatomic,strong) NSDateFormatter * myFormatter;
-@property (nonatomic,strong) NSMutableData* data;
 @property (nonatomic,strong) NSMutableArray* infos;
 @property (nonatomic,strong) NSURLConnection* connection;
 
@@ -24,6 +25,7 @@
     if([super init])
     {
         self.aid = aid;
+        self.infos = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -54,6 +56,8 @@
     self.right.inputView = self.datePickerInput2;
     self.right.text = [myFormatter stringFromDate:[NSDate date]];
     self.left.text = [myFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:-3600*24*7]] ;
+    self.dataView.dataSource = self;
+    self.dataView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +73,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
   
     // 状态请求
-    NSLog(@"%@\n%@",urlStr,url);
     NSURLResponse *response;
     
     // 链接一个请求
@@ -81,22 +84,57 @@
 //    NSString *dataString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
     id json = [NSJSONSerialization JSONObjectWithData:resultData options:kNilOptions error:nil];
     _infos = [json objectForKey:@"orderlist"];
-    NSLog(@"%@", _infos);
+    NSLog(@"%@",_infos);
+    [self.dataView reloadData];
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"AppInfo";
 
+    OderInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (! cell) {
+        cell = [[OderInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
+    id item = [_infos objectAtIndex:indexPath.row];
+    cell.name.text = [item objectForKey:@"app_name"];
+    cell.version.text = [item objectForKey:@"versioncode"];
+    cell.created.text = [item objectForKey:@"created"];
+    switch ([[item objectForKey:@"order_status"] intValue]) {
+        case 1:
+            cell.order_status.text = @"等待付款";
+            break;
+        case 2:
+            cell.order_status.text = @"已付款";
+            break;
+        case 3:
+            cell.order_status.text = @"下载中";
+            break;
+        case 4:
+            cell.order_status.text = @"交易完成";
+            break;
+        default:
+            cell.order_status.text = @"未知状态";
+            break;
+    }
+    cell.price.text = [item objectForKey:@"price"];
+    cell.discount_fee.text = [item objectForKey:@"discount_fee"];
+    
+    cell.frame = CGRectMake(0, 0, kDeviceWidth, 190);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.frame.size.height;
 }
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 60;
+    return _infos.count;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
 
-}
 
 - (IBAction)dateChanged:(id)sender {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
