@@ -13,10 +13,12 @@
 @interface HomeViewController ()
 
 @property (nonatomic,strong)NSMutableData *data;
+@property (nonatomic,assign)NSInteger page;
 
 @end
 
 @implementation HomeViewController
+@synthesize page;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +26,7 @@
     if (self) {
         _data = [[NSMutableData alloc] init];
         _qiushi = [[NSMutableArray alloc] initWithCapacity:20];
+        page = 1;
     }
     return self;
 }
@@ -41,7 +44,7 @@
     [self.view addSubview:self.contentView];
     //
     //step 1:请求地址
-    NSURL *url = [NSURL URLWithString:LastestURLString(30,1)];
+    NSURL *url = [NSURL URLWithString:LastestURLString(30,page)];
     //step 2:实例化一个request
     NSURLRequest *requrst = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     //step 3：创建链接
@@ -86,7 +89,8 @@
 // 返回单元格
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    double height = 0;
+    CGFloat height = 0;
+    CGFloat offSet = 10;
     static NSString *CellIdentifier = @"AppInfo";
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (! cell) {
@@ -96,7 +100,8 @@
     
     cell.icon.image = [UIImage imageNamed:@"thumb_pic"];
     cell.icon.frame = CGRectMake(40, height+40, 64, 64);
-    height += 104;
+    height += 40 + cell.icon.frame.size.height;
+    
     cell.name.text = content.user.userName;
     cell.name.frame = CGRectMake(114, 74, 80, 30);
     
@@ -106,15 +111,18 @@
     cell.content.lineBreakMode = NSLineBreakByWordWrapping;
     [cell.content sizeToFit];
     height += cell.content.frame.size.height+20;
-    
+
     if ((NSNull *)content.image != [NSNull null]) {
+
         NSURL *url = [[NSURL alloc] initWithString: ImageURLSmallString([content.aid substringToIndex:4], content.aid, content.image)];
         UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
         cell.image.image = image;
-        cell.image.frame = CGRectMake(40, height + 10, image.size.width, image.size.height);
+        cell.image.frame = CGRectMake(40, height, image.size.width, image.size.height);
+        cell.image.hidden = NO;
         height += image.size.height + 20;
+    }else{
+        cell.image.hidden = YES;
     }
-    
     cell.background.frame = CGRectMake(0, 0, kDeviceWidth, height+20);
     cell.background.image = [[UIImage imageNamed:@"block_background"]stretchableImageWithLeftCapWidth:0 topCapHeight:10];
     cell.frame = CGRectMake(0, 0, kDeviceWidth, height+20);
@@ -162,12 +170,6 @@
     {
         
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
 }
 
 @end

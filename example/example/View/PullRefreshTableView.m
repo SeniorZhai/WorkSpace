@@ -62,7 +62,7 @@
 	else if(isDragging && scrollView.contentOffset.y < 0)
 	{
 		[UIView beginAnimations:nil context:NULL];
-		if (scrollView.contentOffset.y < kHeight)
+		if (scrollView.contentOffset.y < - kHeight)
 		{
 			_headerLabel.text = @"松开刷新";
 		}
@@ -74,7 +74,7 @@
 	}
 	else if (isDragging && scrollView.contentOffset.y + scrollView.frame.size.height + scrollView.contentSize.height + kHeight)
 	{
-		if (scrollView.contentSize.height <= 200)
+		if (scrollView.contentSize.height <= scrollView.frame.size.height)
 		{
 			return;
 		}
@@ -116,7 +116,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.8];
     self.contentInset = UIEdgeInsetsMake(kHeight, 0, 0, 0);
-    _headerLabel.text = @"加载中";
+    _headerLabel.text = @"刷新中";
     [UIView commitAnimations];
     [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:4];
 }
